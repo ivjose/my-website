@@ -1,4 +1,4 @@
- 
+
 
 class Prices extends React.Component {
   state = {
@@ -25,26 +25,26 @@ class Prices extends React.Component {
     switch (currency) {
       case 'USD':
         list = <li className="list-group-item">
-        Bitcon rate for {bpi.USD.description}: <span className="badge badge-primary">
-        {bpi.USD.code}
-        </span> <strong>{bpi.USD.rate}</strong>
-      </li>
+          Bitcon rate for {bpi.USD.description}: <span className="badge badge-primary">
+            {bpi.USD.code}
+          </span> <strong>{bpi.USD.rate}</strong>
+        </li>
         break;
       case 'GBP':
-      list = <li className="list-group-item">
-      Bitcon rate for {bpi.GBP.description}: <span className="badge badge-primary">
-      {bpi.GBP.code}
-      </span> <strong>{bpi.GBP.rate}</strong>
-    </li>
+        list = <li className="list-group-item">
+          Bitcon rate for {bpi.GBP.description}: <span className="badge badge-primary">
+            {bpi.GBP.code}
+          </span> <strong>{bpi.GBP.rate}</strong>
+        </li>
         break;
       case 'EUR':
-      list = <li className="list-group-item">
-      Bitcon rate for {bpi.EUR.description}: <span className="badge badge-primary">
-      {bpi.EUR.code}
-      </span> <strong>{bpi.EUR.rate}</strong>
-    </li>
+        list = <li className="list-group-item">
+          Bitcon rate for {bpi.EUR.description}: <span className="badge badge-primary">
+            {bpi.EUR.code}
+          </span> <strong>{bpi.EUR.rate}</strong>
+        </li>
         break;
-    
+
       default:
         break;
     }
@@ -52,24 +52,27 @@ class Prices extends React.Component {
 
     return (
       <div>
-      
- 
 
-      <div className="input-group mb-3">
-        <div className="input-group-prepend">
-          <label className="input-group-text" htmlFor="inputGroupSelect01">Options</label>
+
+        <div className="form-group row">
+          <label htmlFor="inputGroupSelect01" className="col-sm-2 col-form-label col-form-label-sm">Email</label>
+          <div className="col-sm-10">
+
+            <select className="form-control" onChange={this.handleSelectCurrency} id="inputGroupSelect01">
+
+              <option value="USD">USD</option>
+              <option value="GBP">GBP</option>
+              <option value="EUR">EUR</option>
+            </select>
+          </div>
         </div>
-        <select className="custom-select" onChange={this.handleSelectCurrency} id="inputGroupSelect01">
-          
-          <option value="USD">USD</option>
-          <option value="GBP">GBP</option>
-          <option value="EUR">EUR</option>
-        </select>
-      </div>
-      <ul className="list-group">
-       {list}
-      </ul>
-        
+
+
+
+        <ul className="list-group">
+          {list}
+        </ul>
+
       </div>
     );
   }
